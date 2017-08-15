@@ -41,7 +41,11 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         Word item = getItem(position);
 
-//        ivPicture.setImageResource();
+        if (item.getImageResourceId() != 0) {
+            ivPicture.setImageResource(item.getImageResourceId());
+        } else {
+            ivPicture.setVisibility(View.GONE);
+        }
         tvMiwok.setText(item.getMiwokTranslation());
         tvDefault.setText(item.getDefaultTranslation());
 
