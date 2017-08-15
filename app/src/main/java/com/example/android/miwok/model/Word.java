@@ -7,7 +7,21 @@ import android.support.annotation.NonNull;
  */
 
 public class Word {
-    private int mImageResourceId;
+    /**
+     * Background color
+     */
+    private int mBackgroundColor;
+
+    /**
+     * Image resource ID for the word
+     */
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
+
+    /**
+     * Constant value that represents no image was provided for this word
+     */
+    private static final int NO_IMAGE_PROVIDED = -1;
+
     private String mMiwokTranslation;
     private String mDefaultTranslation;
 
@@ -20,6 +34,10 @@ public class Word {
         this.mImageResourceId = mImageResourceId;
         this.mDefaultTranslation = mDefaultTranslation;
         this.mMiwokTranslation = mMiwokTranslation;
+    }
+
+    public void setBackgroundColor(int mBackgroundColor) {
+        this.mBackgroundColor = mBackgroundColor;
     }
 
     public int getImageResourceId() {
@@ -44,5 +62,9 @@ public class Word {
 
     public void setDefaultTranslation(String mDefaultTranslation) {
         this.mDefaultTranslation = mDefaultTranslation;
+    }
+
+    public boolean hasImage() {
+        return mImageResourceId != NO_IMAGE_PROVIDED;
     }
 }
