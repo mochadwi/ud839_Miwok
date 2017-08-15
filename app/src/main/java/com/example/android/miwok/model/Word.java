@@ -5,6 +5,7 @@ package com.example.android.miwok.model;
  */
 
 public class Word {
+    private int images;
     private String mMiwokTranslation;
     private String mDefaultTranslation;
 
